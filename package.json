@@ -8,7 +8,7 @@
     "build": "tsc",
     "watch": "tsc --watch",
     "lint:fix": "eslint --fix src/**/*",
-    "deploy:node10": "gcloud functions deploy severityDemoNode10 --entry-point=handler --trigger-http --source=dist --runtime=nodejs10  --region=asia-northeast1 --env-vars-file=.env.dev.yml",
+    "deploy:node10": "gcloud functions deploy severityDemoNode10 --entry-point=handler --trigger-http --source=dist --runtime=nodejs10  --region=asia-northeast1",
     "predeploy": "cp package.json dist"
   },
   "private": true,
