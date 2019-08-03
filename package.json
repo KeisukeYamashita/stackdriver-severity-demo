@@ -1,0 +1,37 @@
+{
+  "name": "stackdriver-severity-demo",
+  "version": "1.0.0",
+  "main": "srt/index.ts",
+  "author": "KeisukeYamashita",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "lint:fix": "eslint --fix src/**/*",
+    "deploy:node10": "gcloud functions deploy severityDemoNode10 --entry-point=handler --trigger-http --source=dist --runtime=nodejs10  --region=asia-northeast1 --env-vars-file=.env.dev.yml",
+    "predeploy": "cp package.json dist"
+  },
+  "private": true,
+  "dependencies": {
+    "@google-cloud/logging-bunyan": "^1.2.1",
+    "@google-cloud/logging-winston": "^1.1.1",
+    "axios": "^0.19.0",
+    "bunyan": "^1.8.12",
+    "express": "^4.17.1",
+    "mysql2": "^1.6.5",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/bunyan": "^1.8.6",
+    "@types/express": "^4.17.0",
+    "@types/node": "^12.0.10",
+    "@types/winston": "^2.4.4",
+    "@typescript-eslint/eslint-plugin": "^1.11.0",
+    "@typescript-eslint/parser": "^1.11.0",
+    "eslint": "^6.0.1",
+    "eslint-config-google": "^0.13.0",
+    "jest": "^24.8.0",
+    "typescript": "^3.5.2"
+  }
+}
